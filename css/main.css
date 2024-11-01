@@ -1,0 +1,151 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/* html{
+    max-height: 100%;
+} */
+
+body{
+    min-height: 100vh;
+    /* overflow: hidden; */
+    background-color: #ccc;
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: calc(20px * 1.3);
+}
+
+section{
+    min-height: 100vh;
+    position: relative;
+}
+
+.card{
+    width: 60%;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    
+}
+
+.left{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+}
+
+.left img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: 0.6s;
+}
+
+.left img:hover{
+    transform: scale(1.1);
+}
+
+.right{
+    margin: 0 0 0 40%;
+    width: 60%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.price{
+    margin-bottom: 25px;
+}
+
+.price::after{
+    content: "By";
+}
+
+.btn{
+    display: inline-block;
+    background-color: #cdb608;
+    padding: 25px;
+    border: 3px solid black;
+    border-radius: 15px;
+    /* -webkit-box-shadow:10px -14px 20px 19px rgba(143,124,50,0.18);
+    -moz-box-shadow: 10px -14px 20px 19px rgba(143,124,50,0.18); */
+    box-shadow: 10px -14px 20px 19px rgba(143,124,50,0.18);
+    transition: 0.6s;
+}
+
+.btn:hover{
+    background-color: #fff;
+    border: 3px dashed rgb(120, 117, 117);
+    border-radius: 15px 0 15px 0;
+    color:#cdb608;
+}
+
+.cardDemo{
+    max-width: 320px;
+    height: 600px;
+    margin: 80px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardDemo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.cardDemo .text{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 25px;
+    transform: translateY(100%);
+    transition: transform 0.8s;
+    background: rgb(0,0,0);
+    color: white;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.cardDemo:hover .text{
+    transform: translateY(0%);
+}
+
+.cardDemo:hover img{
+    transform: scale(1.1);
+}
+
+@media (max-width: 860px) {
+    .left{
+        width: 100%;
+        height: 350px;
+    }
+
+    .right{
+        margin: 350px 0 0 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .btn{
+        background-color: #1ccd08;
+    }
+}
